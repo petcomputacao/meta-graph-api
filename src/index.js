@@ -1,6 +1,6 @@
 const fetch = require('node-fetch');
 
-const ACCESS_TOKEN = process.env.IG_ACCESS_TOKEN;
+const IG_ACCESS_TOKEN = process.env.IG_ACCESS_TOKEN;
 const IG_USER_ID   = process.env.IG_USER_ID;
 
 module.exports = async (req, res) => {

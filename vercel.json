@@ -1,7 +1,7 @@
 	{
 		"name": "meta-graph-api",
 		"scope": "pet-computacao-ufcg",
-		"version": 1,
+		"version": 2,
 		"builds": [
 			{
 				"src": "src/index.js",
