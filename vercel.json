@@ -1,4 +1,6 @@
 {
+	"name": "meta-graph-api",
+	"scope": "pet-computacao-ufcg",
 	"version": 1,
 	"builds": [
 		{
