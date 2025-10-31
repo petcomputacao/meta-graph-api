@@ -14,10 +14,22 @@ jobs:
       - name: Checkout do código
         uses: actions/checkout@v4
 
+      - name: Valida secrets da Meta
+        run: |
+            if [ -z "${{ secrets.IG_USER_ID }}" ] || [ -z "${{ secrets.IG_ACCESS_TOKEN }}" ]; then
+              echo "Erro: Algum secret da Meta não está configurado."
+              exit 1  
+            fi
+      
+      - name: Set up enviroment
+        run: |
+            echo 'IG_USER_ID=${{ secrets.IG_USER_ID }}' >> .env
+            echo 'IG_ACCESS_TOKEN=${{ secrets.IG_ACCESS_TOKEN }}' >> .env
+
       - name: Instalar Vercel CLI
         run: npm install -g vercel
 
-      - name: Verificar secrets
+      - name: Verificar secrets Vercel
         run: |
           if [ -z "${{ secrets.VERCEL_TOKEN }}" ] || [ -z "${{ secrets.VERCEL_TEAM_ID }}" ] || [ -z "${{ secrets.VERCEL_PROJECT_ID }}" ]; then
             echo "Erro: Algum secret da Vercel não está configurado."
