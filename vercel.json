@@ -1,18 +1,18 @@
-{
-	"name": "meta-graph-api",
-	"scope": "pet-computacao-ufcg",
-	"version": 1,
-	"builds": [
-		{
-			"src": "src/index.js",
-			"use": "@vercel/node"
-		}
-	],
+	{
+		"name": "meta-graph-api",
+		"scope": "pet-computacao-ufcg",
+		"version": 1,
+		"builds": [
+			{
+				"src": "src/index.js",
+				"use": "@vercel/node"
+			}
+		],
 
-	"routes": [
-		{
-			"src": "/(.*)",
-			"dest": "src/index.js"
-		}
-	]
-}
+		"routes": [
+			{
+				"src": "/(.*)",
+				"dest": "src/index.js"
+			}
+		]
+	}
