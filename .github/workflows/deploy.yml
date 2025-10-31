@@ -8,6 +8,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment: production
 
     steps:
       - name: Checkout do código
@@ -18,7 +19,7 @@ jobs:
 
       - name: Verificar secrets
         run: |
-          if [ -z "${{ secrets.VERCEL_TOKEN }}" ] || [ -z "${{ secrets.VERCEL_PROJECT_ID }}" ] || [ -z "${{ secrets.VERCEL_ORG_ID }}" ]; then
+          if [ -z "${{ secrets.VERCEL_TOKEN }}" ] || [ -z "${{ secrets.VERCEL_TEAM_ID }}" ] || [ -z "${{ secrets.VERCEL_PROJECT_ID }}" ]; then
             echo "Erro: Algum secret da Vercel não está configurado."
             exit 1
           fi
@@ -28,5 +29,5 @@ jobs:
           vercel --token ${{ secrets.VERCEL_TOKEN }} \
                  --prod \
                  --confirm \
-                 --scope ${{ secrets.VERCEL_ORG_ID }} \
+                 --scope ${{ secrets.VERCEL_TEAM_ID }} \
                  --project ${{ secrets.VERCEL_PROJECT_ID }}
