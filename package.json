@@ -1,8 +1,14 @@
 {
-  "name": "instagram-api",
+  "name": "meta-graph-api",
   "version": "1.0.0",
-  "main": "api/instagram.js",
+  "description": "API simples que resgata os últimos posts do instagram",
+  "type": "module",
+  "main": "index.js",
+  "author": {
+    "name": "Arthur Fernandes Vieira",
+    "email": "arthur.fernandes.vieira@ccc.ufcg.edu.br"
+  },
   "dependencies": {
-    "node-fetch": "^2.7.0"
+    "node-fetch": "^3.3.2"
   }
 }
